@@ -1,6 +1,6 @@
 pragma solidity ^0.4.10;
 
-import './FundInterface.sol'; 
+import "./FundInterface.sol"; 
 
 contract XMFund is FundInterface {
 
@@ -69,7 +69,7 @@ contract XMFund is FundInterface {
         address unitHolder = msg.sender;
 
         if (unitsHeld[unitHolder] <= 0){
-            SellEvent(msg.sender,0,0);
+            CloseEvent(unitHolder,0);
             return 0;
         }
 
@@ -82,7 +82,7 @@ contract XMFund is FundInterface {
 
         unitsHeld[fundManager] = unitsHeld[fundManager] + unitsHeld[unitHolder];
         unitsHeld[unitHolder] = 0;
-        CloseEvent(address unitHolder, uint amount);
+        CloseEvent(unitHolder, positionValue);
         return positionValue;
     }
 
@@ -104,7 +104,7 @@ contract XMFund is FundInterface {
 
     function setUnitPrice(uint price) onlyFundManager constant returns (bool success){
         if (price <=0 ){
-            ErrorEvent(fundManager,'unit price set: must be greater than zero')
+            ErrorEvent(fundManager,'unit price set: must be greater than zero');
             return false;
         }
         unitPrice = price;

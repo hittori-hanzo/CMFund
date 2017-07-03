@@ -1,6 +1,6 @@
 pragma solidity ^0.4.10;
 
-contract Fund {
+contract FundInterface {
     // msg.sender purchases msg.value worth of units, 
     // returns number units purchased
     // @returns true on success false otherwise

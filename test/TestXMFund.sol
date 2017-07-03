@@ -11,15 +11,15 @@ contract TestXMFund {
 
     uint unitPrice = 10000;
 
-    Assert.equal(fund.queryUnitPrice(tx.origin), expected, "fund unit price is 10000 Wei initially");
+    Assert.equal(fund.queryUnitPrice(), unitPrice, "fund unit price is 10000 Wei initially");
   }
 
   function testInitialUnitsHeldWithXMFund() {
     XMFund fund = new XMFund();
 
-    uint expected = 10000000;
+    uint totalUnits = 10000000;
 
-    Assert.equal(fund.getUnitsAvailable(tx.origin), expected, "Fund should have 10000000 units initially");
+    Assert.equal(fund.getUnitsAvailable(), totalUnits, "Fund should have 10000000 units initially");
   }
 
 }
