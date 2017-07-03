@@ -22,4 +22,12 @@ contract TestXMFund {
     Assert.equal(fund.getUnitsAvailable(), totalUnits, "Fund should have 10000000 units initially");
   }
 
+  function testPurchase100UnitsinXMFund() {
+    XMFund fund = new XMFund();
+
+    uint totalUnits = 10000000;
+
+    Assert.equal(fund.getUnitsAvailable(), totalUnits, "Fund should have 10000000 units initially");
+  }
+
 }
