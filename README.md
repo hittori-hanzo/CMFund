@@ -2,7 +2,9 @@
 Example Fund as a Smart contract. 
 
 ```
-smart contract XMFund contains the following operations:
+smart contract XMFund implemented in Solidity.
+
+Contains the following operations:
 
  purchase()
  sell(uint numberOfUnits)
@@ -15,3 +17,7 @@ smart contract XMFund contains the following operations:
  destroy()
 
 ```
+
+## Running Tests
+Start your testrpc then Execute `truffle test`
+
